@@ -21,11 +21,8 @@
         <div style="border: 2px solid #6DE039; text-align: center; margin-top: 50px; width: 700px;" >
             <img src="https://www.schoolcraft.edu/admissions/wp-content/uploads/sites/2/2021/06/persona-first-year.png" alt="" style="margin-top: 50px; border-radius: 50%;" >
             <h4 style="margin-top: 20px;"> Name:{{Auth::user()->name}} </h4>
-            <!-- @foreach($class as $classes)
-            <h4>Class:{{$classes->class->classname}} </h4>
-            @endforeach -->
+            <h4>Class: </h4>
             <h4>Batch: </h4>
-            <!-- <h4>Class:{{$aa->group->classname}} </h4> -->
             <h4>Alloted Exams: </h4>
 
        </div>
@@ -35,7 +32,6 @@
           <tr>
             <th scope="col">SL No</th>
             <th scope="col">Exam</th>
-            <th scope="col">Room Name</th>
             <th scope="col">Subject</th>
             <th scope="col">Date</th>
             <th scope="col">Time</th>
@@ -48,7 +44,6 @@
           <tr>
             <th scope="row"><?php echo ++$i;?></th>
             <td>{{$item->exam->name}}</td>
-            <td>{{$item->room->name}}</td>
             <td>{{$item->subject->subjectname}}</td>
             <td>{{$item->exam_date}}</td>
             <td>{{$item->start_time}}</td>

@@ -21,9 +21,8 @@ class DashboardController extends Controller
     public function dashboard(){
         if (Auth::user()->role == "student") {
             $allotment = Allotment::where('student_id',Auth::user()->student_id)->get();
-            $aa = Student::where('id',Auth::user()->student_id)->first();
-            //dd($class);
-            return view('dashboard.student_page',compact('allotment','aa'));
+            // dd($allotment);
+            return view('dashboard.student_page',compact('allotment'));
         }
         if (Auth::user()->role == "admin")
         {

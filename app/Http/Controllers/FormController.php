@@ -23,7 +23,7 @@ class FormController extends Controller
         $room->type_id =$request->type_id;
         $room->save();
 
-        return redirect(route('dashboard.room'));
+        return redirect(route('room'));
     }
     public function room_edit($id){
         $room = Room::find($id);
@@ -37,7 +37,7 @@ class FormController extends Controller
         $roomtype =Type::where('roomname',$request->type_id)->first();
         $room->type_id =$roomtype->id;
         $room->update();
-        return redirect(route('dashboard.room'));
+        return redirect(route('room'));
         // return view('adminpanel.create.tables.room');
     }
     public function room_del($id){
@@ -61,7 +61,7 @@ class FormController extends Controller
         $roomtype->roomname =$request->roomname;
         $roomtype->save();
 
-        return redirect(route('dashboard.roomtable'));
+        return redirect(route('roomtable'));
     }
     public function roomtype_edit($id){
         $roomtype = Type::find($id);
